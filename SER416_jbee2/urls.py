@@ -16,23 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from SER416_jbee2.views import index
+from SER416_jbee2.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('', login),
-    path('', create_user),
-    path('', customer_portal),
-    path('', admin_portal),
-    path('', make_donation),
-    path('', book_event),
-    path('', class_signup),
-    path('', volunteer),
-    path('', request_homecare),
-    path('', request_shuttle),
-    path('', confirmation),
-    path('', view_events),
-    path('', view_equipment),
-    path('', view_classes),
+    path('login/', login),
+    path('create_user/', create_user),
+    path('customer_portal/', customer_portal),
+    path('admin_portal/', admin_portal),
+    path('make_donation/', make_donation),
+    path('book_event/', book_event),
+    path('class_signup/', class_signup),
+    path('volunteer/', volunteer),
+    path('request_homecare/', request_homecare),
+    path('request_shuttle/', request_shuttle),
+    path('confirmation/', confirmation),
+    path('view_events/', view_events),
+    path('view_equipment/', view_equipment),
+    path('view_classes/', view_classes),
 ]
