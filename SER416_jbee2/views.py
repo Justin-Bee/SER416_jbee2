@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):
@@ -7,6 +8,10 @@ def index(request):
 
 def login(request):
     return render(request, 'login.html')
+
+
+def admin_login(request):
+    return render(request, 'admin-login.html')
 
 
 def create_user(request):
@@ -59,3 +64,6 @@ def view_equipment(request):
 
 def view_classes(request):
     return render(request, 'view-classes.html')
+
+
+

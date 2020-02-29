@@ -1,5 +1,19 @@
 body{
-    color:"green";
+    background-color:#77216F;
     padding-top: 65px;
+    color:#E95420
+
+
+}
+
+.navbar{
+    background-color:#411934;
+}
+
+h1{
+    color:#E95420
+}
+
+input{
 
 }
