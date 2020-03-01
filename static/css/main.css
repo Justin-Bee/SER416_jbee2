@@ -2,7 +2,8 @@ body{
     background-color:#77216F;
     padding-top: 65px;
     color:#E95420;
-
+    width: 70%;
+    margin:0 auto;
 }
 
 table.equipment .equipment th ,.equipment td{

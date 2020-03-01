@@ -25,6 +25,7 @@
   </div>
 </nav>
 <body>
+<div class="text-center">
 <h1>Create User</h1>
 <form id="create_user" action={% url 'index' %}>
 <label for='id'>User Name</label><br>
@@ -37,6 +38,7 @@
 <input type='email' id='email'><br>
 <input type='submit'>
 </form>
+</div>
 </body>
 <script>
  $(document).on('submit', '#create_user', function (e) {

@@ -29,8 +29,24 @@
     </ul>
   </div>
 </nav>
+<div class="text-center">
 <h1>Request Shuttle Service</h1>
-
+<form id="create_user" action={% url 'confirmation' %}>
+<label for='ploc'>Pickup Location</label><br>
+<input type='text' id='ploc'><br>
+<label for='dloc'>Drop-off Location</label><br>
+<input type='text' id='dloc'><br>
+<label for='date'>Date</label><br>
+<input type='date' id='date'><br>
+<label for='cc'>Credit Card Number</label><br>
+<input type='text' id='cc'><br>
+<label for='date'>Expiration Date</label><br>
+<input type='date' id='date'><br>
+<label for='name'>Name on Card</label><br>
+<input type='text' id='name'><br>
+<input type='submit'>
+</form>
+</div>
 </body>
 
 </html>

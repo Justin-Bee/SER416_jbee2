@@ -29,8 +29,18 @@
     </ul>
   </div>
 </nav>
+<div class="text-center">
 <h1>Signup for a Class</h1>
-
+<form id="create_user" action={% url 'confirmation' %}>
+<label for='type'>Class Type</label><br>
+<input type='text' id='type'><br>
+<label for='date'>Date</label><br>
+<input type='date' id='date'><br>
+<label for='size'>Size</label><br>
+<input type='number' id='size'><br>
+<input type='submit'>
+</form>
+</div>
 </body>
 
 </html>
