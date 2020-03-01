@@ -9,7 +9,7 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
      <!-- Latest compiled JavaScript -->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" />
+     <link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}" >
 </head>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
@@ -27,8 +27,51 @@
     </ul>
   </div>
 </nav>
-<h1>View Equipment</h1>
+<h1>Manage Equipment</h1>
+<h2>Add New Equipment</h2>
+<form id="add_equipment">
+<label for='type'>Equipment Type</label><br>
+<input type='text' id='type'><br>
+<label for='quantity'>Password</label><br>
+<input type='number' id='quantity'><br>
+<input type='submit'>
+</form>
 
+<h1>All Equipment</h1>
+<table class="table table-bordered" style="width: auto !important">
+    <tr>
+        <th >Type</th>
+        <th>Quantity</th>
+    </tr>
+    <tr>
+        <td>Karaoke Machine</td>
+        <td>3</td>
+    </tr>
+</table>
+</body>
+<script>
+ $(document).on('submit', '#add_equipment', function (e) {
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "{% url "database" %}",
+                data:{
+                    type:$('#type').val(),
+                    quantity:$('#quantity').val(),
+                    action: 'equipment',
+                },
+                success:function(result){
+                    console.log(result);
+
+                },
+                error: function(e){
+                    console.log(e);
+                },
+            });
+
+        });
+ </script>
 </body>
 
 </html>

@@ -1,9 +1,13 @@
 body{
     background-color:#77216F;
     padding-top: 65px;
-    color:#E95420
+    color:#E95420;
 
+}
 
+table.equipment .equipment th ,.equipment td{
+
+    border: 1px solid black;
 }
 
 .navbar{
@@ -11,9 +15,7 @@ body{
 }
 
 h1{
-    color:#E95420
+    color:#E95420;
 }
 
-input{
 
-}

@@ -13,7 +13,7 @@ class User(models.Model):
 class Classes(models.Model):
     name = models.CharField(max_length=50, primary_key=True, unique=True)
     date = models.DateField()
-    models.IntegerField()
+    size = models.IntegerField()
 
 
 class Events(models.Model):

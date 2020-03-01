@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
-from .models import User
+from .models import *
 
 
 @csrf_exempt
@@ -28,5 +28,23 @@ def database(request):
             )
             response = "True"
             response_data['login'] = 'True'
+    elif request.POST.get('action') == 'equipment':
+        equip = Equipment.objects.all()
+        type = request.POST.get('type')
+        quantity = request.POST.get('quantity')
 
-    return JsonResponse(response_data)
+        if Equipment.objects.filter(type = type).exists():
+            temp = Equipment.objects.get(type=type).quantity
+            Equipment.objects.update(
+                type = type,
+                quantity = int(temp) + int(quantity)
+            )
+            response_data['equipment'] = 'True'
+        else:
+            Equipment.objects.create(
+                type = type,
+                quantity = quantity
+            )
+            response_data['equipment'] = 'True'
+
+    return JsonResponse(equip)
